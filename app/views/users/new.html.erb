@@ -1,9 +1,8 @@
-<legend>Create an Account</legend>
+<legend>Become A Pokemon Master!</legend>
 
 <%= form_for @user do |f| %>
   <div>
     Name:<%= f.text_field :name, placeholder: "Name" %>
-
   </div>
   <div>
     Email:<%= f.text_field :email, placeholder: "Email" %>
@@ -12,7 +11,7 @@
     Password:<%= f.password_field :password, placeholder: "Password" %>
   </div>
   <div>
-  Profile Image:  <%= f.url_field :profile_image, placeholder: "Insert link for Profile Image" %>
+    Profile Image:<%= f.url_field :profile_image, placeholder: "Insert link for Profile Image" %>
   </div>
   <%= f.submit "Sign Up", class: "btn" %>
 <% end %>

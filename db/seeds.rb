@@ -5,12 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Pokemon.delete_all
+User.delete_all
+
 response = HTTParty.get("https://pokeapi.co/api/v2/pokemon/")
 response["pokemons"].each do |pokemon|
   Pokemon.create({
-    name: pokemon["name"]
+    name: pokemon["name"],
     })
+  end
 
+# creation of users
 User.create([
   {
     name: "Jimmy",
@@ -18,4 +23,4 @@ User.create([
     password: "test",
     profile_image: "https://vignette.wikia.nocookie.net/youtubepoop/images/f/f7/5Pikachu.png/revision/latest?cb=20141108062013"
   }
-  ])
+  ]);

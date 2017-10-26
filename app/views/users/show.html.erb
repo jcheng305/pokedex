@@ -1,9 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col s6 offset-s3 center-align">
+<!-- BEGIN Profile image and description -->
+<!-- BEGIN Profile IMAGE -->
+<div class="prof-image">
 
-      <h1><%= @user.name %></h1>
-      <hr>
-    </div>
-  </div>
+  <% if @user.profile_image.empty? %>
+    <%= image_tag(asset_path('default_user_no_image.jpeg'), class: "circle") %>
+  <% else %>
+    <%= image_tag(@user.profile_image, class: "circle") %>
+  <% end %>
 </div>
+
+<div class="container">
+<div class="row" style="margin-bottom: 0px">
+  <div class="col s12 wht-cont z-depth-5">
+      <!-- BEGIN PROFILE INFO -->
+      <div class="prof-description">
+        <h4><%= @user.name.upcase %></h4>
+
+        <b>Date Joined: </b><%= @user.created_at.strftime("%B").to_s + " " + @user.created_at.year.to_s %></p>
+      </div>

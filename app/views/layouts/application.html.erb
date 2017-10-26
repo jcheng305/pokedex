@@ -5,7 +5,6 @@
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <%= csrf_meta_tags %>
-  <%= action_cable_meta_tag %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Anton Font -->
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
@@ -14,9 +13,10 @@
 </head>
 
 <body>
+  <div class="navbar-fixed">
 
   <nav>
-    <div class="navbar-fixed">
+      <div class="nav-wrapper">
       <%= link_to root_path do %>
       <%= image_tag(asset_path("logov2.svg"), class:"brand-logo", style: "height: 100%") %>
       <% end %>
@@ -26,24 +26,25 @@
         <li><%= link_to "Profile", user_path(current_user) %></li>
         <li><%= link_to "Log Out", logout_path %></li>
         <% else %>
-        <li><%= link_to "Register", new_user_path, class:"modal-trigger" %></li>
-        <li><%= link_to "Sign in", login_path, class:"modal-trigger"%></li>
-        <% end %>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><%=link_to "HOME", root_path %></li>
-
-        <% if current_user %>
-        <li><%= link_to "Profile", user_path(current_user) %></li>
-        <li><%= link_to "Log Out", logout_path %></li>
-        <% else %>
-        <li><%= link_to "Register", new_user_path %></li>
-        <li><%= link_to "Sign in", login_path %></li>
+        <li><%= link_to "Register", href="#sign-up", class:"modal-trigger"%></li>
+        <li><%= link_to "Sign in", href="#sign-in-modal", class:"modal-trigger"%></li>
         <% end %>
       </ul>
     </div>
   </nav>
+</div>
 
+<ul class="side-nav" id="mobile-demo">
+  <% if current_user %>
+  <li><%= link_to "Profile", user_path(current_user) %></li>
+  <li><%= link_to "Log Out", logout_path %></li>
+  <% else %>
+  <li><%= link_to "Register", new_user_path %></li>
+  <li><%= link_to "Sign in", login_path %></li>
+  <% end %>
+</ul>
+
+<!-- MODAL FOR SIGNUP -->
   <div class="modal-for-sign-up">
     <%= form_for (User.new), url:users_path, method: "post" do |f| %>
     <div id="sign-up" class="modal">
@@ -59,6 +60,7 @@
   </div>
 
   <!-- MODAL FOR LOGIN -->
+  <div class="modal-for-sign-in">
   <%= form_for :user, url: "/sessions", method: "post" do |f| %>
   <div id="sign-in-modal" class="modal">
     <div class="modal-content">
@@ -69,6 +71,7 @@
       <% end %>
     </div>
   </div>
+</div>
   <!--Flashing messages on pages  -->
   <div class="col s8 push-s2">
     <% flash.each do |name, msg| %>

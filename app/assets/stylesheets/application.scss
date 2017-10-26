@@ -21,6 +21,9 @@
    background-color: black;
    box-shadow: none;
  }
+ body {
+   background-image: image("../assets/images/background.jpg");
+ }
  .flashmessage {
   border-style: solid;
   border-color: black;
