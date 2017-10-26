@@ -11,5 +11,22 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self
+*= require_self
  */
+ @import "materialize";
+ @import "materialize/components/color";
+ @import "materialize/extras/nouislider";
+
+ nav {
+   background-color: black;
+   box-shadow: none;
+ }
+ .flashmessage {
+  border-style: solid;
+  border-color: black;
+  background-color: rgba(255, 0, 0, 0.2);
+  font-size: 120%;
+  text-align: center;
+  margin-top: 2%;
+  padding: 2%
+}

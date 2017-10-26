@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pokédex</title>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Anton Font -->
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+  <nav>
+    <div class="navbar-fixed">
+      <%= link_to root_path do %>
+      <%= image_tag(asset_path("logov2.svg"), class:"brand-logo", style: "height: 100%") %>
+      <% end %>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <% if current_user %>
+        <li><%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "Log Out", logout_path %></li>
+        <% else %>
+        <li><%= link_to "Register", new_user_path, class:"modal-trigger" %></li>
+        <li><%= link_to "Sign in", login_path, class:"modal-trigger"%></li>
+        <% end %>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><%=link_to "HOME", root_path %></li>
+
+        <% if current_user %>
+        <li><%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "Log Out", logout_path %></li>
+        <% else %>
+        <li><%= link_to "Register", new_user_path %></li>
+        <li><%= link_to "Sign in", login_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="modal-for-sign-up">
+    <%= form_for (User.new), url:users_path, method: "post" do |f| %>
+    <div id="sign-up" class="modal">
+      <div class="modal-content">
+
+        <%= render partial: "layouts/user_forms", locals: { f: f } %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Create Account", class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL FOR LOGIN -->
+  <%= form_for :user, url: "/sessions", method: "post" do |f| %>
+  <div id="sign-in-modal" class="modal">
+    <div class="modal-content">
+      <%= render partial: "layouts/sign_in", locals: { f: f } %>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit "LOG IN", class: "modal-action modal-close waves-effect waves-green btn-flat", id: "sign-in-button" %>
+      <% end %>
+    </div>
+  </div>
+  <!--Flashing messages on pages  -->
+  <div class="col s8 push-s2">
+    <% flash.each do |name, msg| %>
+    <div id='toast-container'>
+      <%= javascript_tag "Materialize.toast('#{msg}', 4000)" %>
+    </div>
+    <% end %>
+  </div>
+  <%= yield %>
+</body>
+</html>
