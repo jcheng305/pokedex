@@ -1,5 +1,7 @@
 {
   "name": "pokedex",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "oakdex-pokedex": "^0.1.2"
+  }
 }

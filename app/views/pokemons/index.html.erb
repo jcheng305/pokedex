@@ -1,8 +1,18 @@
 <h1>This is the index for POKEDEX!</h1>
+<section>
+  <% @pokemons.each do |pokemon| %>
+    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+      <ul>
+      <li> <%= pokemon.pokemon_id %></li>
+        <li><%= pokemon.name %> </li>
+        <li><%= pokemon.species %></li>
+        <li><%= pokemon.pokemon_type %></li>
+        <li><%= pokemon.height %></li>
+        <li><%= pokemon.weight %></li>
+        <li><%= pokemon.description %></li>
+        <%= image_tag pokemon.image %>
 
-<% @pokemons.each do |pokemon| %>
-  <div class="pokedex">
-    <%= pokemon.name %>
-
+      </ul>
+    <%end%>
   </div>
-  <%end %>
+</section>
