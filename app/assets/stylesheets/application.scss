@@ -17,12 +17,28 @@
  @import "materialize/components/color";
  @import "materialize/extras/nouislider";
 
+
+
+
+ html{
+   box-sizing: border-box;
+ }
+ h1{
+   text-align: center;
+   text-decoration: underline;
+ }
+ h5{
+   text-decoration: underline;
+ }
  nav {
    background-color: black;
    box-shadow: none;
  }
  body {
-   background-image: image("../assets/images/background.jpg");
+   font-family: 'pokemon-font', monospace;
+   background-image: image("images/background.jpg");
+   background-color: red;
+
  }
  .flashmessage {
   border-style: solid;
@@ -32,4 +48,32 @@
   text-align: center;
   margin-top: 2%;
   padding: 2%
+}
+.card.small {
+  background-image: url("https://i.imgur.com/qP06YY4.jpg");
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+  text-align: left;
+  font-family: 'pokemon-font', monospace;
+  float: left;
+  width: 33%;
+
+
+
+}
+.card .card-image img {
+  width: 40%;
+  position: relative;
+  display: block;
+  text-align: center;
+  font-family: 'pokemon-font', monospace;
+  float: left;
+
+}
+
+.w3-row-padding {
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
 }

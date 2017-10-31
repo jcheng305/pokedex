@@ -14,7 +14,9 @@
   <div class="col s12 wht-cont z-depth-5">
       <!-- BEGIN PROFILE INFO -->
       <div class="prof-description">
-        <h4><%= @user.name.upcase %></h4>
+        <h4><%= @user.name.capitalize %></h4>
 
         <b>Date Joined: </b><%= @user.created_at.strftime("%B").to_s + " " + @user.created_at.year.to_s %></p>
+        <h5>Pokemon Caught:</h5>
+
       </div>

@@ -1,18 +1,50 @@
-<h1>This is the index for POKEDEX!</h1>
-<section>
-  <% @pokemons.each do |pokemon| %>
-    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-      <ul>
-      <li> <%= pokemon.pokemon_id %></li>
-        <li><%= pokemon.name %> </li>
-        <li><%= pokemon.species %></li>
-        <li><%= pokemon.pokemon_type %></li>
-        <li><%= pokemon.height %></li>
-        <li><%= pokemon.weight %></li>
-        <li><%= pokemon.description %></li>
-        <%= image_tag pokemon.image %>
+<body>
 
-      </ul>
-    <%end%>
-  </div>
+<h1>Kanto Pokédex</h1>
+
+<section>
+<h5>Search for Pokémon: </h5>
+  <%= form_tag pokemons_path, :method => 'get' do%>
+  <%= text_field_tag :search, params[:search] ,placeholder:"Pokémon Name" %>
+    <%=submit_tag "Search"%>
+<% end %>
 </section>
+
+
+
+  <% @pokemons.each do |pokemon| %>
+<div class= "card small">
+      <div class="card-image waves-effect waves-block waves-light">
+
+
+        <%= image_tag pokemon.image, :class => "activator" %>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= pokemon.name %><i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+        <ul>
+          <li>ID: <%= pokemon.pokemon_id %></li>
+          <li>Name: <%= pokemon.name %></li>
+          <li>Species: <%= pokemon.species %></li>
+          <li>Type: <%= pokemon.pokemon_type %></li>
+          <li>Height: <%= pokemon.height %></li>
+          <li>Weight: <%= pokemon.weight %></li>
+          <li>Description: <%= pokemon.description %></li>
+        </ul>
+      </div>
+    </div>
+    <%end%>
+
+  </body>
+
+
+
+<!-- <tbody id='pokemons'>
+  <%= render 'layouts/pokemon_list'%>
+</tbody>
+
+<div id="infinite-scrolling">
+  <%= will_paginate @pkm %>
+</div> -->
