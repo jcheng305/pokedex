@@ -1,6 +1,6 @@
 # GA PROJECT 4: Pokedex
 
-This a Pokedex created purely from Ruby on Rails.
+This a Pokedex created purely from Ruby on Rails based on the Kanto region, which consists of 151 pokemon.
 
 Technologies used:
 
