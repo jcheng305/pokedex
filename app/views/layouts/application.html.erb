@@ -53,7 +53,7 @@
         <%= render partial: "layouts/user_forms", locals: { f: f } %>
       </div>
       <div class="modal-footer">
-        <%= f.submit "Create Account", class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+        <%= f.submit "Create Account", class: "modal-action modal-close waves-effect red waves-red btn-large" %>
         <% end %>
       </div>
     </div>
@@ -67,7 +67,7 @@
       <%= render partial: "layouts/sign_in", locals: { f: f } %>
     </div>
     <div class="modal-footer">
-      <%= f.submit "LOG IN", class: "modal-action modal-close waves-effect waves-green btn-flat", id: "sign-in-button" %>
+      <%= f.submit "LOG IN", class: "modal-action modal-close waves-effect red btn-large", id: "sign-in-button" %>
       <% end %>
     </div>
   </div>
