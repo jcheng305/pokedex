@@ -21,7 +21,7 @@ Technologies used:
 * Materilize
 
 
-##Heroku Link:
+# Heroku Link:
 
 * https://scary-labyrinth-39653.herokuapp.com/
 
