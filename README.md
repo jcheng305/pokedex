@@ -18,7 +18,7 @@ Technologies used:
 
 * Postgresql
 
-* Materilize
+* Materialize
 
 
 # Heroku Link:
