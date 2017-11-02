@@ -1,15 +1,18 @@
 <body>
 
-<h1><a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/171102/67992abef63bbc6a2025b2e69bd481b3.png" alt="pokemon-font" border="0"></a></h1>
+<h1><a href="https://fontmeme.com/pokemon-font/">
+    <img src="https://fontmeme.com/permalink/171102/67992abef63bbc6a2025b2e69bd481b3.png"
+    alt="pokemon-font" border="0"></a></h1>
 
+<div class="search-field">
 <section>
-<h5>Search for Pokémon: </h5>
-  <%= form_tag pokemons_path, :method => 'get' do%>
-  <%= text_field_tag :search, params[:search] ,placeholder:"Pokémon Name" %>
-    <%=submit_tag "Search"%>
-<% end %>
+  <h5>Search for Pokémon: </h5>
+    <%= form_tag pokemons_path, :method => 'get' do%>
+    <%= text_field_tag :search, params[:search] ,placeholder:"Pokémon Name" %>
+    <%= submit_tag "Search"%>
+  <% end %>
 </section>
-
+</div>
 
 
 <% @pokemons.each do |pokemon| %>
@@ -24,24 +27,22 @@
       <%= pokemon.name%>
     </li>
   </ul>
-  <br />
 </a>
 <!-- Modal Structure -->
 <div id="modal1-<%=pokemon.pokemon_id%>" class="modal">
 
   <div class="modal-content">
-<div class="id"><%= pokemon.pokemon_id%></div>
-<div class="name"><%= pokemon.name %></div>
-<div class="species"><%= pokemon.species %></div>
-<div class="type"><%= pokemon.pokemon_type %></div>
-<div class="height"><%= pokemon.height %></div>
-<div class="weight"><%= pokemon.weight %></div>
-<div class="description"><%= pokemon.description %></div>
-<div class="gif"><%= image_tag pokemon.gif, class:"poke-gif"%></div>
-<div class="footprints"><%= image_tag pokemon.footprint , class:"poke-footprints"%></div>
-
-</div>
+    <div class="id"><%= pokemon.pokemon_id%></div>
+    <div class="name"><%= pokemon.name %></div>
+    <div class="species"><%= pokemon.species %></div>
+    <div class="type"><%= pokemon.pokemon_type %></div>
+    <div class="height"><%= pokemon.height %></div>
+    <div class="weight"><%= pokemon.weight %></div>
+    <div class="description"><%= pokemon.description %></div>
+    <div class="gif"><%= image_tag pokemon.gif, class:"poke-gif"%></div>
+    <div class="footprints"><%= image_tag pokemon.footprint , class:"poke-footprints"%></div>
+  </div>
 </div>
 <%end%>
 
-  </body>
+</body>

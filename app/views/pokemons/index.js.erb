@@ -1,6 +1,0 @@
-$('#pokemons').append('<= j render(@pkm) %>');
-<% if @pkm.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate(@pkm) %>')
-  <% else %>
-  $('.pagination').remove();
-  <% end %>

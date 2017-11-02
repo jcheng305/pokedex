@@ -1,34 +1,29 @@
 <!-- BEGIN Profile image and description -->
 <!-- BEGIN Profile IMAGE -->
 <body class="user-show">
-
-<div class="prof-image">
-
-  <% if @user.profile_image.empty? %>
+  <div class="prof-image">
+    <% if @user.profile_image.empty? %>
     <%= image_tag(asset_path('default_user_no_image.jpeg'), class: "circle") %>
-  <% else %>
+    <% else %>
     <%= image_tag(@user.profile_image, class: "circle") %>
-  <% end %>
-</div>
-
-<div class="container">
-<div class="row" style="margin-bottom: 0px">
-  <div class="col s12 wht-cont z-depth-5">
-      <!-- BEGIN PROFILE INFO -->
-      <div class="prof-description">
-        <h4><%= @user.name.capitalize %></h4>
-
-        <b>Date Joined: </b><%= @user.created_at.strftime("%B").to_s + " " + @user.created_at.year.to_s %></p>
-
-        <%= link_to user_path(@user), data: {title: 'Permanently delete', confirm: "Are you sure? This action cannot be undone."}, class: 'modal-action modal-close waves-effect red btn-large', method: :delete  do %>
-          DELETE USER
+    <% end %>
+  </div>
+  <div class="container">
+    <div class="row" style="margin-bottom: 0px">
+      <div class="col s12 wht-cont z-depth-5">
+        <!-- BEGIN PROFILE INFO -->
+        <div class="prof-description">
+          <h4><%= @user.name.capitalize %></h4>
+          <b>Date Joined: </b><%= @user.created_at.strftime("%B").to_s + " " + @user.created_at.year.to_s %></p>
+          <%= link_to user_path(@user),
+                data: {title: 'Permanently delete',
+                confirm: "Are you sure? This action cannot be undone."},
+                class: 'modal-action modal-close waves-effect red btn-large',
+                method: :delete  do %>
+                DELETE USER
           <% end %>
-
-
-            <%= link_to "Edit Profile", edit_user_path(current_user), class: "modal-action modal-close waves-effect red btn-large" %>
-
-        <h5>Pokemon Caught:</h5>
-
-      </div>
-
-    </body>
+          <%= link_to "Edit Profile", edit_user_path(current_user),
+              class: "modal-action modal-close waves-effect red btn-large" %>
+          <h5>Pokemon Caught:</h5>
+        </div>
+</body>

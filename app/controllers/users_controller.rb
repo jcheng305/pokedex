@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :require_login, except: [:new, :create, :user_params]
+  before_action :require_login, except: [:new, :create, :user_params, :show]
+  before_action :check_owner, only: [:edit, :update, :destroy]
+
 
   def index
     redirect_to root_path
@@ -11,7 +13,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-
     if @user.save
       flash[:success] = "Account Successfully Created!"
       login @user
@@ -34,9 +35,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
       if @user.update_attributes(user_update_params)
         flash[:success] = "Profile Updated!"
-        redirect_to user_path
+        redirect_to user_path(@user)
       else
-        flash[:error] = "Please Try Again!"
+        flash[:error] = "Profile was not updated! Please try again!"
         render :edit
       end
   end
@@ -44,8 +45,8 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    flash[:success] = "User has been successfully deleted!"
-    redirect_to root_path
+      flash[:success] = "User has been successfully deleted!"
+      redirect_to root_path
   end
 
   private
@@ -57,5 +58,9 @@ class UsersController < ApplicationController
   def user_update_params
     params.require(:user).permit(:name, :email, :profile_image)
   end
-
+  def check_owner
+    if session[:user_id] != User.find(params[:id]).id
+      redirect_to user_path(current_user)
+    end
+  end
 end
