@@ -1,24 +1,29 @@
-# README
+# GA PROJECT 4: Pokedex
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This a Pokedex created purely from Ruby on Rails.
 
-Things you may want to cover:
+Technologies used:
 
-* Ruby version
+* Ruby version: 2.4.0
 
-* System dependencies
+* Rails 5.1.4
 
-* Configuration
+* Jquery
 
-* Database creation
+* JavaScript
 
-* Database initialization
+* Html
 
-* How to run the test suite
+* CSS
 
-* Services (job queues, cache servers, search engines, etc.)
+* Postgresql
 
-* Deployment instructions
+* Materilize
 
-* ...
+
+##Heroku Link:
+
+* https://scary-labyrinth-39653.herokuapp.com/
+
+## Created by:
+* [Jimmy Cheng](https://github.com/jcheng305)
