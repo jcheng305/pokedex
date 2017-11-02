@@ -29,7 +29,7 @@
    text-decoration: underline;
  }
  h5{
-   color: black;
+   color: white;
    text-decoration: underline;
    line-height: 50%;
  }
@@ -39,8 +39,8 @@
  }
  body {
    font-family: 'pokemon-font', monospace;
-   background-image: image("../images/background.jpg");
-   background-color: black;
+   background-image: url("https://pre00.deviantart.net/7b00/th/pre/f/2012/279/9/f/legendary_pokemon_youtube_background_by_pheonixmaster1-d4mmnwq.jpg");
+   background-size: 1440px;
 
  }
  .flashmessage {
@@ -55,7 +55,7 @@
 
 label {
     font-size: 1.0rem;
-    color: white;
+    color: black;
 }
 .btn:hover, .btn-large:hover {
   background-color: #fbfbfb;
@@ -85,7 +85,6 @@ label {
 .poke-footprints {
   width: 80px;
   position: relative;
-
   left: 285px;
   bottom: 480px;
   right: 200px;
@@ -96,12 +95,25 @@ label {
     left: -35px;
     z-index: 1;
 }
+.row .col.s12 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    background-color: white;
+    opacity: 0.9;
+    right: auto;
+}
+.row{
+  background-color: white;
+  opacity: 0.9
+}
 
 .btn, .btn-large {
     text-decoration: none;
     color: black;
     background-color: #111312;
     background-image: url(https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG);
+    background-repeat: no-repeat;
     background-position: -84px;
     text-align: center;
     letter-spacing: .5px;
@@ -110,7 +122,28 @@ label {
     cursor: pointer;
     opacity: 0.8;
 }
+.btn, .btn-large, .btn-large, .btn-flat {
+    border: none;
+    border-radius: 2px;
+    height: 218px;
+    width: 37%;
+    color: white;
+    left: 187px;
+}
 
+
+.modal .modal-footer .btn,
+.modal .modal-footer .btn-large,
+.modal .modal-footer .btn-flat {
+    margin: 30px 120px;
+}
+
+.waves-input-wrapper .waves-button-input {
+    position: relative;
+    top: -10px;
+    left: -35px;
+    z-index: 1;
+}
 .modal {
   width: 50% !important ;
   height: 75% !important ;
@@ -130,10 +163,9 @@ label {
 .btn, .btn-large, .btn-flat {
   border: none;
   border-radius: 2px;
-  height: 220px;
-  max-width: 100%;
-  top: 9px;
-  left: 51px;
+  height: 218px;
+  width: 37%;
+  left: 187px;
 
 }
 body.modal-open{

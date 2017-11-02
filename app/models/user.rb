@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   # has_many :pokemon :foreign_key => "pokemon_type"
 
-  validates :name, presence: true, uniqueness: true, length: {minimum: 5, maximum:10}
+  validates :name, presence: true, uniqueness: true, length: {minimum: 1, maximum:25}
   validates :email, presence: true, uniqueness: true, length: {minimum: 1}
   validates :password, presence: true, length: {minimum: 6}
 

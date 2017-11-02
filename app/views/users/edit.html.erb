@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row" style="margin-top: 0.75rem">
+      <h3>Editing Profile for <%=@user.name %></h3>
+      <%= form_for @user do |f| %>
+      <div>
+        <%= f.label :name%>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :email%>
+        <%= f.email_field :email %>
+      </div>
+      <div>
+        <%= f.label :profile_image%>
+        <%= f.url_field :profile_image %>
+      </div>
+      <div class="btn-inline">
+      <%= f.submit "Save Changes", class: "btn" %>
+      <% end %>
+     </div>

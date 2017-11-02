@@ -1,5 +1,7 @@
 <!-- BEGIN Profile image and description -->
 <!-- BEGIN Profile IMAGE -->
+<body class="user-show">
+
 <div class="prof-image">
 
   <% if @user.profile_image.empty? %>
@@ -17,6 +19,16 @@
         <h4><%= @user.name.capitalize %></h4>
 
         <b>Date Joined: </b><%= @user.created_at.strftime("%B").to_s + " " + @user.created_at.year.to_s %></p>
+
+        <%= link_to user_path(@user), data: {title: 'Permanently delete', confirm: "Are you sure? This action cannot be undone."}, class: 'modal-action modal-close waves-effect red btn-large', method: :delete  do %>
+          DELETE USER
+          <% end %>
+
+
+            <%= link_to "Edit Profile", edit_user_path(current_user), class: "modal-action modal-close waves-effect red btn-large" %>
+
         <h5>Pokemon Caught:</h5>
 
       </div>
+
+    </body>

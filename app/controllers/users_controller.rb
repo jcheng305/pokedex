@@ -26,15 +26,36 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+      if @user.update_attributes(user_update_params)
+        flash[:success] = "Profile Updated!"
+        redirect_to user_path
+      else
+        flash[:error] = "Please Try Again!"
+        render :edit
+      end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "User has been successfully deleted!"
+    redirect_to root_path
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password ,:profile_image)
   end
 
-#   def check_owner
-#     if session[:user_id] != User.find(params[:id])
-#       redirect_to user_path(current_user)
-#   end
-# end
+  def user_update_params
+    params.require(:user).permit(:name, :email, :profile_image)
+  end
+
 end
