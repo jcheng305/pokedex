@@ -12,39 +12,36 @@
 
 
 
-  <% @pokemons.each do |pokemon| %>
-<div class= "card small">
-      <div class="card-image waves-effect waves-block waves-light">
+<% @pokemons.each do |pokemon| %>
+<!-- Modal Trigger -->
 
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1-<%=pokemon.pokemon_id%>">
+  <ul>
+    <li>
+      <%= image_tag pokemon.image, :class => "pokemon" %>
+    </li>
+    <li>
+      <%= pokemon.name%>
+    </li>
+  </ul>
+  <br />
+</a>
+<!-- Modal Structure -->
+<div id="modal1-<%=pokemon.pokemon_id%>" class="modal">
 
-        <%= image_tag pokemon.image, :class => "activator" %>
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"><%= pokemon.name %><i class="material-icons right">more_vert</i></span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-        <ul>
-          <li>ID: <%= pokemon.pokemon_id %></li>
-          <li>Name: <%= pokemon.name %></li>
-          <li>Species: <%= pokemon.species %></li>
-          <li>Type: <%= pokemon.pokemon_type %></li>
-          <li>Height: <%= pokemon.height %></li>
-          <li>Weight: <%= pokemon.weight %></li>
-          <li>Description: <%= pokemon.description %></li>
-        </ul>
-      </div>
-    </div>
-    <%end%>
+  <div class="modal-content">
+<div class="id"><%= pokemon.pokemon_id%></div>
+<div class="name"><%= pokemon.name %></div>
+<div class="species"><%= pokemon.species %></div>
+<div class="type"><%= pokemon.pokemon_type %></div>
+<div class="height"><%= pokemon.height %></div>
+<div class="weight"><%= pokemon.weight %></div>
+<div class="description"><%= pokemon.description %></div>
+<div class="gif"><%= image_tag pokemon.gif, class:"poke-gif"%></div>
+<div class="footprints"><%= image_tag pokemon.footprint , class:"poke-footprints"%></div>
+
+</div>
+</div>
+<%end%>
 
   </body>
-
-
-
-<!-- <tbody id='pokemons'>
-  <%= render 'layouts/pokemon_list'%>
-</tbody>
-
-<div id="infinite-scrolling">
-  <%= will_paginate @pkm %>
-</div> -->

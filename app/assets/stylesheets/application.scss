@@ -24,11 +24,14 @@
    box-sizing: border-box;
  }
  h1{
+   color: white;
    text-align: center;
    text-decoration: underline;
  }
  h5{
+   color: black;
    text-decoration: underline;
+   line-height: 50%;
  }
  nav {
    background-color: black;
@@ -36,8 +39,8 @@
  }
  body {
    font-family: 'pokemon-font', monospace;
-   background-image: image("images/background.jpg");
-   background-color: red;
+   background-image: image("../images/background.jpg");
+   background-color: black;
 
  }
  .flashmessage {
@@ -49,31 +52,154 @@
   margin-top: 2%;
   padding: 2%
 }
-.card.small {
-  background-image: url("https://i.imgur.com/qP06YY4.jpg");
-  padding-left: 8px;
-  padding-right: 8px;
-  position: relative;
-  text-align: left;
-  font-family: 'pokemon-font', monospace;
-  float: left;
-  width: 33%;
 
+label {
+    font-size: 1.0rem;
+    color: white;
+}
+.btn:hover, .btn-large:hover {
+  background-color: #fbfbfb;
+}
+.modal-footer {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlc-syUOs3UyL4IcmkqsDcSZd3wx3MN1ESTi_y4VGEXmV0qhrN");
+  background-position: center;
+}
+#sign-in-button{
+  color: white;
+}
+#sign-in-modal{
+  background-color:white;
+  background-image: url("http://www.allwhitebackground.com/images/2/2283.jpg");
+  background-size: cover;
 
 
 }
-.card .card-image img {
-  width: 40%;
+#sign-up{
+  background-color:orange;
+  background-image: url("http://www.powerpointhintergrund.com/uploads/2017/07/bit-wallpaper-8-bit-pokemon-awesome-wallpaperpicture-for-desktop-19.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 75%;
+  background-position:center;
+}
+.poke-footprints {
+  width: 80px;
   position: relative;
-  display: block;
-  text-align: center;
-  font-family: 'pokemon-font', monospace;
-  float: left;
 
+  left: 285px;
+  bottom: 480px;
+  right: 200px;
+}
+.waves-input-wrapper .waves-button-input {
+    position: relative;
+    top: 0px;
+    left: -35px;
+    z-index: 1;
 }
 
-.w3-row-padding {
-  padding-left: 8px;
-  padding-right: 8px;
-  width: 100%;
+.btn, .btn-large {
+    text-decoration: none;
+    color: black;
+    background-color: #111312;
+    background-image: url(https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG);
+    background-position: -84px;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.modal {
+  width: 50% !important ;
+  height: 75% !important ;
+  overflow-y: hidden !important ;
+  background-image: url("https://img00.deviantart.net/809a/i/2013/038/8/d/pokedex_base_blank_by_riastrifechan-d5u70xb.png");
+  background-size: contain;
+  background-repeat:no-repeat;
+  background-color: red;
+  padding-bottom: 0px !important;
+}
+
+.modal.modal-close {
+  position: relative;
+  left: 250px;
+}
+//Overall grid for pokemons
+.btn, .btn-large, .btn-flat {
+  border: none;
+  border-radius: 2px;
+  height: 220px;
+  max-width: 100%;
+  top: 9px;
+  left: 51px;
+
+}
+body.modal-open{
+  overflow: hidden;
+}
+
+.modal-content {
+  font-weight: bold;
+}
+.gif {
+  position: relative;
+  left: 5px;
+  bottom: 300px;
+  right: 200px;
+
+}
+.modal-action.modal-close.waves-effect.waves-red.btn-large{
+  color: white;
+}
+.poke-gif{
+  width: 300px;
+}
+.pokemon {
+  width: 150px;
+}
+
+.id {
+  font-size: 25px;
+  position: relative;
+  left: 325px;
+  top: 28px;
+}
+.name {
+  font-size: 25px;
+  position: relative;
+  left: 400px;
+  top: -10px;
+  bottom: 10px;
+}
+.species {
+  top: -10px;
+  font-size: 24px;
+  left: 400px;
+  position:relative;
+}
+.type {
+  font-size: 14px;
+  left: 390px;
+  position:relative;
+  top: 16px;
+}
+.weight {
+    left: 475px;
+    top: 70px;
+    position: relative;
+}
+.height {
+    left: 475px;
+    top: 50px;
+    position: relative;
+}
+.description {
+    font-size: 20px;
+    left: 80px;
+    top: 130px;
+    padding-bottom: 20px;
+    padding-right: 162px;
+    position: relative;
 }
